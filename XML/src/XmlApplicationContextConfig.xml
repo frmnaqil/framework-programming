@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+    <context:property-placeholder location="classpath:motor.conf"/>
+        
+    <bean id="researchStatus" class="com.aqil.manufacture.ResearchElectric">
+    </bean>
+    
+    <bean id="motorBean" class="com.aqil.manufacture.VehicleMotor">
+
+    	<!-- Dependecy Injection -->
+    	<constructor-arg ref="researchStatus"></constructor-arg>
+    
+   		<!-- Setter Injection -->
+    	<property name="electricResearch" ref="researchStatus"></property>
+    	<property name="name" value="${motor.name}"></property>
+    	<property name="wheel" value="${motor.wheel}"></property>
+    	<property name="engineCapacity" value="${motor.engineCapacity}"></property>
+    	<property name="transmissionGear" value="${motor.transmissionGear}"></property>
+    	<property name="maxSpeed" value="${motor.maxSpeed}"></property>
+    </bean>
+
+</beans>
