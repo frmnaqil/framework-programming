@@ -66,8 +66,8 @@ public class VehicleMotor implements Vehicle {
 	}
 
 	@Override
-	public void getManufacturingStatus() {
-		System.out.println("Motor Manufacturing Status : Healthy");
+	public String getManufacturingStatus() {
+		return "Motor Manufacturing Status : Healthy";
 		
 	}
 

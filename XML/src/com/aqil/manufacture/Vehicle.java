@@ -2,7 +2,7 @@ package com.aqil.manufacture;
 
 public interface Vehicle {
 	
-	void getManufacturingStatus();
+	public String getManufacturingStatus();
 	final int warrantyDuration = 5; 
 
 }

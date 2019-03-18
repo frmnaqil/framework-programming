@@ -49,8 +49,8 @@ public class VehicleCar implements Vehicle {
 	}
 
 	@Override
-	public void getManufacturingStatus() {
-		System.out.println("Car Manufacturing Status : Healthy");
+	public String getManufacturingStatus() {
+		return "Car Manufacturing Status : Healthy";
 		
 	}
 
